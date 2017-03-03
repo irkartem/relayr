@@ -8,8 +8,6 @@
 
 ## How it work 
 
- It will be easy with valid domains for consul. 
-
  I have 3 docker containers. With random ips. 
 
  My mysql docker container starts and register service in consul via curl request (may be it's not robust way)
@@ -31,7 +29,15 @@ Hello world!<br>
 But I haven't time for test and improve.
 
 ##todo
-- Add exeption for dummyapp 
-- Develop service resitration concept
 - Make domains for consul :) 
+- Develop service resitration concept
+- Use env for communication is not good way, may be
+- Add exeption for dummyapp 
+- Host port binding *:8080 work starnge. need investigate. 
 
+## Stat.
+I did not work with consul before. And do not use vagrant often.
+
+I spent approx 6 hours for configuration. 
+
+Main problem was my mysql docker become broken. Some mysticks and I rollback and debug it for ~3 hours. 
