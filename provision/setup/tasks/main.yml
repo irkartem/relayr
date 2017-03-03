@@ -18,20 +18,30 @@
 -   name: Make sure Docker is running
     service: name=docker state=running
     tags: docker
-- name: Create db container and connect to network
+- name: Start consul
+  docker_container:
+    name:  consul
+    image: consul
+    ports:
+      - "8500:8500"
+      - "8400:8400"
+      - "53:53/udp"
+- name: Create db
   docker_container:
     name: db_test
-    image: "mysql:latest"
-    exposed_ports:
-      - 6379
+    #image: "mariadb:latest"
+    image: "artemirk/mariadb"
+    links:
+      - consul
     env:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: ooCh0Quo
 
-- name: Start container, connect to network and link
+- name: Start dummy
   docker_container:
-    name: server
-    image: dummypython
+    name: apps
+    image: artemirk/dummyapp
     links:
       - db_test
+      - consul
     ports:
-      - "80:8080"
+      - "8080:8080"

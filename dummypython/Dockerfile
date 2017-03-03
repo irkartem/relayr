@@ -1,15 +1,10 @@
 FROM python 
 
-# File Author / Maintainer
-MAINTAINER Maintaner Name
+MAINTAINER Artem Artemev
 
-# Copy the application folder inside the container
-ADD ./run.py /run.py
+ADD ./run.py /root/run.py
+RUN pip install pymysql requests
 
-# Expose ports
 EXPOSE 8080
 
-# Set the default command to execute    
-# when creating a new container
-# i.e. using CherryPy to serve the application
-CMD python /run.py
+CMD python /root/run.py
