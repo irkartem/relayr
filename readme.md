@@ -19,4 +19,19 @@
 - http://$CONSUL_PORT_8500_TCP_ADDR:8500/v1/kv/mysql_root_password?raw
 - http://$CONSUL_PORT_8500_TCP_ADDR:8500/v1/health/service/mysql
 
+## Result
+
+It's work for me and print information from DB:
+
+# curl localhost:8080                                                                                                                                                                                                                                                                                                                               
+Hello world!<br>
+(('Host', 254, None, 60, 60, 0, False), ('User', 254, None, 80, 80, 0, False))
+
+
+But I haven't time for test and improve.
+
+##todo
+- Add exeption for dummyapp 
+- Develop service resitration concept
+- Make domains for consul :) 
 

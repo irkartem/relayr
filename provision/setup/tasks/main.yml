@@ -43,5 +43,7 @@
     links:
       - db_test
       - consul
-    ports:
+    exposed_ports:
+      - "8080"
+    published_ports:
       - "8080:8080"
