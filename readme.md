@@ -30,14 +30,14 @@ But I haven't time for test and improve.
 
 ##todo
 - Make domains for consul :) 
-- Develop service resitration concept
+- Develop service registration concept
 - Use env for communication is not good way, may be
-- Add exeption for dummyapp 
+- Need add exeptions for dummyapp 
 - Host port binding *:8080 work starnge. need investigate. 
 
 ## Stat.
-I did not work with consul before. And do not use vagrant often.
+I did not work with consul before. And did not use vagrant often.
 
 I spent approx 6 hours for configuration. 
 
-Main problem was my mysql docker become broken. Some mysticks and I rollback and debug it for ~3 hours. 
+Main problem was my mysql docker become broken. Some mysticks with mysql_install_db and ENTRYPOINT and I rollback and debug it for ~3 hours.
