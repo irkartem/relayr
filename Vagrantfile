@@ -30,6 +30,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Install required software, dependencies and configurations on the
   # virtual machine using a provisioner.
   config.vm.provision "ansible" do |ansible|
+    ansible.verbose = "v"
     ansible.playbook = "provision/vagrant.yml"
   end
 end
